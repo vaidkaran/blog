@@ -1,0 +1,10 @@
+<html>
+  <body>
+    <% Post.all.each do |post| %>
+      <strong>Title:</strong> <%= post.title %> <br>
+      <strong>Body:</strong> <%= post.body %> <br>
+      <%= link_to "View", post_path(post) %>
+      <br> <br>
+    <% end %>
+  </body>
+</html>

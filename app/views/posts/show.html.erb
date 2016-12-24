@@ -1,0 +1,17 @@
+<strong>Title:</strong> <br>
+<%= @post.title %>
+<br> <br>
+<strong>Body:</strong> <br>
+<%= @post.body %> <br> <br>
+
+<strong>Comments:</strong> <br>
+<% @post.comments.all.each do |comment| %>
+  <%= comment.body %> <br>
+<% end %>
+<br> <br>
+
+<strong>New Comment:</strong> <br>
+<%= form_for(@comment, url: post_comments_path(@post)) do |f| %>
+  <%= f.text_area :body %> <br>
+  <%= f.submit :submit %>
+<% end %>
