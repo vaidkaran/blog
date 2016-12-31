@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
 
-  root 'posts#index'
+  root 'home#index'
+
+  get 'home/index'
+
+  devise_for :users
+  #root 'posts#index'
 
   resources :essays
   resources :posts do
